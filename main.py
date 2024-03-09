@@ -28,7 +28,7 @@ while True:
     if can_read:
         if timer % 25 == 0:
             try:
-                threading.Thread(target=check_face, args=(next_frame.copy()), ).start() #copy of the frame is passed unto check_face to 
+                threading.Thread(target=check_face, args=(next_frame.copy(),)).start() #copy of the frame is passed unto check_face to 
             except ValueError: #deepface returns a value error when there isn't a match (strange)
                 pass
 
