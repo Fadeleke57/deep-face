@@ -37,11 +37,11 @@ while True:
         timer += 1
 
         if face_match:
-            cv.putText(next_frame, "VERIFIED", (20, 450), cv.FONT_ITALIC, 2, (0, 255, 0), 3) #displays veried if there's a match and not verified otherwise
+            next_frame_wtext = cv.putText(next_frame, "VERIFIED", (20, 450), cv.FONT_ITALIC, 2, (0, 255, 0), 3) #displays veried if there's a match and not verified otherwise
         else:
-            cv.putText(next_frame, "NOT VERIFIED", (20, 450), cv.FONT_ITALIC, 2, (0, 0, 255), 3)
+            next_frame_wtext = cv.putText(next_frame, "NOT VERIFIED", (20, 450), cv.FONT_ITALIC, 2, (0, 0, 255), 3)
 
-        cv.imshow("video frame", next_frame) # displays video stream
+        cv.imshow("video frame", next_frame_wtext) # displays video stream
 
 
     key = cv.waitKey(1) #quit when q is pressed
