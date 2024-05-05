@@ -1,3 +1,4 @@
+# part of a larger project to add face id to my laptop
 import threading
 import cv2 as cv
 from deepface import DeepFace # https://github.com/serengil/deepface
@@ -28,12 +29,12 @@ while True:
     if can_read:
         if timer % 25 == 0:
             pass
-            '''
+       
             try:
                 threading.Thread(target=check_face, args=(next_frame.copy(),)).start() #copy of the frame is passed unto check_face to 
             except ValueError: #deepface returns a value error when there isn't a match (strange)
                 pass
-'''
+
         timer += 1
 
         if face_match:
@@ -41,7 +42,7 @@ while True:
         else:
             next_frame_wtext = cv.putText(next_frame, "NOT VERIFIED", (20, 450), cv.FONT_ITALIC, 2, (0, 0, 255), 3)
 
-        cv.imshow("video frame", next_frame_wtext) # displays video stream
+    cv.imshow("video frame", next_frame_wtext) # displays video stream
 
 
     key = cv.waitKey(1) #quit when q is pressed
